@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Distributeur.iml" filepath="$PROJECT_DIR$/Distributeur.iml" />
+      <module fileurl="file://C:\Users\alex\Documents\GitHub\TP1\Distributeur.iml" filepath="C:\Users\alex\Documents\GitHub\TP1\Distributeur.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TP1.iml" filepath="$PROJECT_DIR$/TP1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

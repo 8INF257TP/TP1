@@ -7,14 +7,15 @@ import info.dicj.distributeur.Distributeur.Distribuable.Saveur.*;
 import info.dicj.distributeur.Distributeur.Distribuable.Distribuable;
 
 /**
- * Created by Michael on 2018-01-17.
+ * Created by : Michael Lizotte, Alexandre Girard-Gagnon
+ * Date: 2018-01-17.
  */
 
 public class Distributeur {
-    List<Boisson> boissons;
-    List<Saveur> saveurs;
-    Melange melangePrecedent;
-    Melange melangeCourant;
+    private List<Boisson> boissons;
+    private List<Saveur> saveurs;
+    private Melange melangePrecedent;
+    private Melange melangeCourant;
 
     public Distributeur() {
         remplirDistributeur();
@@ -36,7 +37,20 @@ public class Distributeur {
             remplirProduit(saveur);
     }
     private void remplirProduit(Distribuable dist) {
-        while(dist.getQuantite()<dist.MAX_PRODUIT)
+        while(dist.getQuantite()<Distribuable.MAX_PRODUIT)
             dist.ajouter();
     }
+    public void nouveauMelange(){
+        melangePrecedent = melangeCourant;
+        melangeCourant = new Melange();
+    }
+
+    public void dupliquerMelange(){
+        melangePrecedent = melangeCourant;
+        melangeCourant = new Melange(melangePrecedent);
+    }
+
+   // public Melange getMelangeCourant() {}
+
+   // public Melange getMelangePrecedent() {}
 }
