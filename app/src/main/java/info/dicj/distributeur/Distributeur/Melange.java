@@ -11,29 +11,22 @@ import info.dicj.distributeur.Distributeur.Distribuable.Saveur.Saveur;
 
 public class Melange {
     final int MAX_BOISSON = 2;
+    int qteBoisson = 0;
     List<Boisson> boissons;
     Saveur saveur;
 
     public Melange(){};
 
-    public boolean ajouterBoisson(Boisson boisson) {
+    public void ajouterBoisson(Boisson boisson) {
+        boissons.add(boisson);
+        qteBoisson++;
 
-        if(boissons.contains(boisson))
-            boissons.get(boissons.indexOf(boissons)).ajouter();
-        else if(boissons.size() >= 2)
-            return false;
-        else
-            boissons.add(boisson);
-
-        return true;
+        if(qteBoisson > MAX_BOISSON)
+            return; //Throw new DebordementMelangeException("Le melange a deborde!");
     }
 
-    public boolean ajouterSaveur(Saveur saveur) {
+    public void ajouterSaveur(Saveur saveur) {
         if(saveur == null)
             this.saveur = saveur;
-        else
-            return false;
-
-        return true;
     }
 }

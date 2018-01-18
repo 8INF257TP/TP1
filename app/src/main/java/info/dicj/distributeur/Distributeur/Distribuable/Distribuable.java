@@ -8,7 +8,7 @@ public class Distribuable implements IProduit{
     int quantite;
     String nom;
     String description;
-    public final int MAX_PRODUIT = 10;
+    public static final int MAX_PRODUIT = 10;
 
     public Distribuable(int _quantite, String _nom, String _description) {
         quantite = _quantite;
