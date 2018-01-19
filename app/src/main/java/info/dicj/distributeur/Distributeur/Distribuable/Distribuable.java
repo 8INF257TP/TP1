@@ -5,9 +5,9 @@ package info.dicj.distributeur.Distributeur.Distribuable;
  */
 
 public class Distribuable implements IProduit{
-    int quantite;
-    String nom;
-    String description;
+    private int quantite;
+    private String nom;
+    private String description;
     public static final int MAX_PRODUIT = 10;
 
     public Distribuable(int _quantite, String _nom, String _description) {
