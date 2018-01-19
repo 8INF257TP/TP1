@@ -1,6 +1,6 @@
 package info.dicj.distributeur.Distributeur;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import info.dicj.distributeur.Distributeur.Distribuable.Boisson.Boisson;
 import info.dicj.distributeur.Distributeur.Distribuable.Saveur.Saveur;
@@ -13,34 +13,39 @@ import info.dicj.distributeur.Distributeur.Exception.DebordementMelangeException
 public class Melange {
     private static final int MAX_BOISSON = 2;
     private int qteBoisson = 0;
-    private List<Boisson> boissons;
+    private ArrayList<Boisson> boissons;
     private Saveur saveur;
 
-    public Melange(){}
+    public Melange(){
+        boissons = new ArrayList<>();
+    }
 
     public Melange (Melange _melange) {
         for(Boisson boisson : _melange.boissons)
+            try{
             ajouterBoisson(boisson);
+            }
+            catch (DebordementMelangeException DME){
+                DME.printStackTrace();
+            }
         saveur = _melange.saveur;
     }
 
-    public void ajouterBoisson(Boisson boisson) {
-        try {
+    public void ajouterBoisson(Boisson boisson) throws DebordementMelangeException {
             boissons.add(boisson);
             qteBoisson++;
 
             if (qteBoisson > MAX_BOISSON) {
                 throw new DebordementMelangeException();
             }
-        }
-        catch (DebordementMelangeException DME)
-        {
-            DME.getMessage();
-        }
     }
 
-    public void ajouterSaveur(Saveur saveur) {
-        if(saveur == null)
-            this.saveur = saveur;
+    public void ajouterSaveur(Saveur _saveur) throws DebordementMelangeException {
+        if(saveur == null) {
+            saveur = _saveur;
+        }
+        else {
+            throw new DebordementMelangeException();
+        }
     }
 }

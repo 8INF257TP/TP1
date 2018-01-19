@@ -6,6 +6,9 @@ import android.util.Log;
 import android.view.View;
 
 import info.dicj.distributeur.Distributeur.Distributeur;
+import info.dicj.distributeur.Distributeur.Exception.AucunDistribuableException;
+import info.dicj.distributeur.Distributeur.Exception.AucunMelangeException;
+import info.dicj.distributeur.Distributeur.Exception.DebordementMelangeException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             afficherRecette(distributeur.melangerRecette());
 
-        } catch (AucunMelangeException e) {
-            e.printStackTrace();
+        } catch (AucunMelangeException AME) {
+            AME.printStackTrace();
         }
         */
     }
@@ -57,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("DICJ", "MainActivity.ajouterSaveur");
 
-        /*
         try {
             switch(view.getId()){
 
@@ -68,19 +70,19 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.sBacon:       distributeur.ajouterSaveur("BACON");
                                         break;
             }
-        } catch (AucunDistribuableException e) {
-            e.printStackTrace();
-        } catch (DebordementMelangeException e) {
-            e.printStackTrace();
+        } catch (AucunDistribuableException ADE) {
+            ADE.printStackTrace();
+        } catch (DebordementMelangeException DME) {
+            DME.printStackTrace();
         }
-        */
+
     }
 
     public void ajouterBoisson(View view) {
 
         Log.i("DICJ", "MainActivity.ajouterBoisson");
 
-        /*
+
         try {
             switch(view.getId()){
                 case R.id.bPepsi:       distributeur.ajouterBoisson("PEPSI");
@@ -92,21 +94,21 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.bFraise:      distributeur.ajouterBoisson("FRAISE");
                                         break;
             }
-        } catch (AucunDistribuableException e) {
-            e.printStackTrace();
-        } catch (DebordementMelangeException e) {
-            e.printStackTrace();
         }
-        */
+        catch (AucunMelangeException AME) {
+            AME.printStackTrace();
+        }
+        catch (DebordementMelangeException DME) {
+            DME.printStackTrace();
+        }
+
     }
 
     public void nouveau(View view) {
 
         Log.i("DICJ", "MainActivity.nouveau");
 
-        /*
         distributeur.nouveauMelange();
-        */
     }
 
     /*

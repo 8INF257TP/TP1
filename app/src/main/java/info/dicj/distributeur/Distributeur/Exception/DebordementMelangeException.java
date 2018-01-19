@@ -11,6 +11,6 @@ public class DebordementMelangeException extends Exception{
 
     @Override
     public String getMessage() {
-        return super.getMessage() + "Le melange a deborde";
+        return "Le melange a deborde";
     }
 }

@@ -1,10 +1,12 @@
 package info.dicj.distributeur.Distributeur;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import info.dicj.distributeur.Distributeur.Distribuable.Boisson.*;
 import info.dicj.distributeur.Distributeur.Distribuable.Saveur.*;
 import info.dicj.distributeur.Distributeur.Distribuable.Distribuable;
+import info.dicj.distributeur.Distributeur.Exception.AucunDistribuableException;
+import info.dicj.distributeur.Distributeur.Exception.DebordementMelangeException;
 
 /**
  * Created by : Michael Lizotte, Alexandre Girard-Gagnon
@@ -12,12 +14,15 @@ import info.dicj.distributeur.Distributeur.Distribuable.Distribuable;
  */
 
 public class Distributeur {
-    private List<Boisson> boissons;
-    private List<Saveur> saveurs;
+    private ArrayList<Boisson> boissons;
+    private ArrayList<Saveur> saveurs;
     private Melange melangePrecedent;
     private Melange melangeCourant;
 
     public Distributeur() {
+        boissons = new ArrayList<>();
+        saveurs = new ArrayList<>();
+        melangeCourant = new Melange();
         remplirDistributeur();
     }
     private void remplirDistributeur() {
@@ -37,9 +42,36 @@ public class Distributeur {
             remplirProduit(saveur);
     }
     private void remplirProduit(Distribuable dist) {
-        while(dist.getQuantite()<Distribuable.MAX_PRODUIT)
+        while(dist.getQuantite() < Distribuable.MAX_PRODUIT)
             dist.ajouter();
     }
+
+    public void ajouterBoisson(String _nomBoisson) throws DebordementMelangeException {
+        for(Boisson _boisson: boissons) {
+            if(_boisson.getNom() == _nomBoisson)
+            {
+                if(!_boisson.estVide()) {
+                    melangeCourant.ajouterBoisson(_boisson);
+                    _boisson.consommer();
+                }
+            }
+        }
+    }
+
+    public void ajouterSaveur(String _nomSaveur) throws DebordementMelangeException, AucunDistribuableException {
+        for(Saveur _saveur: saveurs) {
+            if(_saveur.getNom() == _nomSaveur)
+            {
+                if(!_saveur.estVide()) {
+                    melangeCourant.ajouterSaveur(_saveur);
+                    _saveur.consommer();
+                }
+                else
+                    throw new AucunDistribuableException();
+            }
+        }
+    }
+
     public void nouveauMelange(){
         melangePrecedent = melangeCourant;
         melangeCourant = new Melange();

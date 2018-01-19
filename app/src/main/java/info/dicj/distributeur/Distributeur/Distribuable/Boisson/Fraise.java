@@ -6,7 +6,7 @@ package info.dicj.distributeur.Distributeur.Distribuable.Boisson;
 
 public class Fraise extends Boisson {
     public Fraise() {
-        super("Fraise", "Breuvage delicieux et petillant");
+        super("FRAISE", "Breuvage delicieux et petillant");
     }
 
     public String toString() {

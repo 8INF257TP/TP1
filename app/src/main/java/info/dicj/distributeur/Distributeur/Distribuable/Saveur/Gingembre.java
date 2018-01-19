@@ -6,7 +6,7 @@ package info.dicj.distributeur.Distributeur.Distribuable.Saveur;
 
 public class Gingembre extends Saveur {
     public Gingembre() {
-        super("Gingembre", "Saveur delicieuse de gingembre");
+        super("GINGEMBRE", "Saveur delicieuse de gingembre");
     }
 
     public String toString() {
