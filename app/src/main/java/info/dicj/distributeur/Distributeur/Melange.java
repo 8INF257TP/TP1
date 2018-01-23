@@ -41,11 +41,10 @@ public class Melange {
     }
 
     public void ajouterSaveur(Saveur _saveur) throws DebordementMelangeException {
-        if(saveur == null) {
+        if(saveur == null)
             saveur = _saveur;
-        }
-        else {
+        else
             throw new DebordementMelangeException();
-        }
     }
+
 }

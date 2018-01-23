@@ -6,7 +6,7 @@ package info.dicj.distributeur.Distributeur.Distribuable.Saveur;
 
 public class Epice extends Saveur {
     public Epice() {
-        super("ÉPICE","Saveur delicieuse d'epice");
+        super("EPICE","Saveur delicieuse d'epice");
     }
 
     public String toString() {

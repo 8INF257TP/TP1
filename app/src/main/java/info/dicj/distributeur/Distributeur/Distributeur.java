@@ -59,6 +59,7 @@ public class Distributeur {
     }
 
     public void ajouterSaveur(String _nomSaveur) throws DebordementMelangeException, AucunDistribuableException {
+
         for(Saveur _saveur: saveurs) {
             if(_saveur.getNom() == _nomSaveur)
             {
