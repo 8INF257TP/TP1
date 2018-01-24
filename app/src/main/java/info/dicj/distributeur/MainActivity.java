@@ -1,14 +1,17 @@
 package info.dicj.distributeur;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import info.dicj.distributeur.Distributeur.Distributeur;
 import info.dicj.distributeur.Distributeur.Exception.AucunDistribuableException;
 import info.dicj.distributeur.Distributeur.Exception.AucunMelangeException;
 import info.dicj.distributeur.Distributeur.Exception.DebordementMelangeException;
+import info.dicj.distributeur.Distributeur.Recette;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("DICJ", "MainActivity.reverser");
 
-        /*
         try {
             distributeur.dupliquerMelange();
             verser(view);
@@ -39,21 +41,19 @@ public class MainActivity extends AppCompatActivity {
         } catch (DebordementMelangeException e) {
             e.printStackTrace();
         }
-        */
     }
 
     public void verser(View view) {
 
         Log.i("DICJ", "MainActivity.verser");
 
-        /*
         try {
             afficherRecette(distributeur.melangerRecette());
 
         } catch (AucunMelangeException AME) {
             AME.printStackTrace();
         }
-        */
+
     }
 
     public void ajouterSaveur(View view) {
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         distributeur.nouveauMelange();
     }
 
-    /*
+
     public void afficherRecette(Recette recette){
 
 
@@ -122,5 +122,5 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(context, information, duree);
         toast.show();
     }
-    */
+
 }
