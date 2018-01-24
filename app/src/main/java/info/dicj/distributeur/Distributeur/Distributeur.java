@@ -6,6 +6,7 @@ import info.dicj.distributeur.Distributeur.Distribuable.Boisson.*;
 import info.dicj.distributeur.Distributeur.Distribuable.Saveur.*;
 import info.dicj.distributeur.Distributeur.Distribuable.Distribuable;
 import info.dicj.distributeur.Distributeur.Exception.AucunDistribuableException;
+import info.dicj.distributeur.Distributeur.Exception.AucunMelangeException;
 import info.dicj.distributeur.Distributeur.Exception.DebordementMelangeException;
 
 /**
@@ -78,12 +79,23 @@ public class Distributeur {
         melangeCourant = new Melange();
     }
 
-    public void dupliquerMelange(){
-        melangePrecedent = melangeCourant;
-        melangeCourant = new Melange(melangePrecedent);
+    public void dupliquerMelange() throws AucunMelangeException, AucunDistribuableException, DebordementMelangeException {
+        if (melangePrecedent == null)
+            throw new AucunMelangeException();
+        if (melangePrecedent.getNbBoissons() > 2)
+            throw new DebordementMelangeException();
+        for (Boisson boisson : melangePrecedent.getBoissons())
+            if (boisson.estVide())
+                throw new AucunDistribuableException();
+        melangeCourant = melangePrecedent;
     }
 
-   // public Melange getMelangeCourant() {}
+    public Melange melangerRecette() throws AucunMelangeException {
+        if (melangeCourant.getBoissons().isEmpty())
+                throw new AucunMelangeException();
+        melangePrecedent = melangeCourant;
+        return melangeCourant;
+    }
 
    // public Melange getMelangePrecedent() {}
 }

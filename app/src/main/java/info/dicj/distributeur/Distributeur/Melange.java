@@ -10,7 +10,7 @@ import info.dicj.distributeur.Distributeur.Exception.DebordementMelangeException
  * Created by Michael on 2018-01-17.
  */
 
-public class Melange {
+public class Melange implements Recette {
     private static final int MAX_BOISSON = 2;
     private int qteBoisson = 0;
     private ArrayList<Boisson> boissons;
@@ -47,4 +47,24 @@ public class Melange {
             throw new DebordementMelangeException();
     }
 
+    public String getInformation() {
+        ArrayList<String> nomBoissons = new ArrayList<>();
+
+        for(Boisson boisson: boissons){
+            nomBoissons.add(boisson.getNom());
+        }
+
+        if(saveur == null)
+            return "boissons: " + nomBoissons.toString() + "\nSaveurs: Aucune";
+        else
+            return "boissons: " + nomBoissons.toString() + "\nSaveurs: " + saveur.getNom();
+    }
+
+    public int getNbBoissons(){
+        return boissons.size();
+    }
+
+    public ArrayList<Boisson> getBoissons (){
+        return boissons;
+    }
 }
