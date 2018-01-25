@@ -11,124 +11,149 @@
     android:orientation="vertical"
     tools:context="info.dicj.distributeur.MainActivity">
 
-    <TextView
-        android:text="Super Distributeur DICJ"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:layout_height="0dp"
+        android:layout_weight="50">
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
-
-        <TextView
-            android:text="Les boissons"
+        <LinearLayout
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_columnSpan="2"
-            android:onClick="ajouterBoisson" />
+            android:orientation="vertical">
+            <TextView
+                android:text="Super Distributeur DICJ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pepsi"
-            android:id="@+id/bPepsi"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:onClick="ajouterBoisson" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Orangeade"
-            android:id="@+id/bOrangeade"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:onClick="ajouterBoisson" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Les boissons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:onClick="ajouterBoisson" />
+                </TableRow>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Racinette"
-            android:id="@+id/bRacinette"
-            android:layout_row="2"
-            android:layout_column="0"
-            android:onClick="ajouterBoisson" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pepsi"
+                        android:id="@+id/bPepsi"
+                        android:layout_column="0"
+                        android:layout_weight="50"
+                        android:onClick="ajouterBoisson" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fraise"
-            android:id="@+id/bFraise"
-            android:layout_row="2"
-            android:layout_column="1"
-            android:onClick="ajouterBoisson" />
-    </GridLayout>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Orangeade"
+                        android:id="@+id/bOrangeade"
+                        android:layout_column="1"
+                        android:layout_weight="50"
+                        android:onClick="ajouterBoisson" />
+                </TableRow>
 
-    <GridLayout
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Racinette"
+                    android:id="@+id/bRacinette"
+                    android:layout_column="0"
+                    android:layout_weight="50"
+                    android:onClick="ajouterBoisson" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fraise"
+                    android:id="@+id/bFraise"
+                    android:layout_column="1"
+                    android:layout_weight="50"
+                    android:onClick="ajouterBoisson" />
+                </TableRow>
+            </TableLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+                    <TextView
+                        android:text="Les saveurs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/saveurs"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Épice"
+                        android:id="@+id/sEpice"
+                        android:layout_below="@id/saveurs"
+                        android:onClick="ajouterSaveur" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bacon"
+                        android:id="@+id/sBacon"
+                        android:layout_below="@id/saveurs"
+                        android:layout_toRightOf="@id/sEpice"
+                        android:onClick="ajouterSaveur" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gingembre"
+                        android:id="@+id/sGingembre"
+                        android:layout_below="@id/saveurs"
+                        android:layout_toRightOf="@id/sBacon"
+                        android:onClick="ajouterSaveur" />
+            </RelativeLayout>
+
+            <TextView
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="Les opérations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="Nouveau"
+                android:onClick="nouveau" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="Verser"
+                android:onClick="verser" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
-
-        <TextView
-            android:text="Les saveurs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_columnSpan="3"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Épice"
-            android:id="@+id/sEpice"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:onClick="ajouterSaveur" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bacon"
-            android:id="@+id/sBacon"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:onClick="ajouterSaveur" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gingembre"
-            android:id="@+id/sGingembre"
-            android:layout_row="1"
-            android:layout_column="2"
-            android:onClick="ajouterSaveur" />
-    </GridLayout>
-
-
-    <TextView
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:text="Les opérations"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nouveau"
-        android:onClick="nouveau" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Verser"
-        android:onClick="verser" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="50"
         android:text="Verser (mélange précédent)"
         android:onClick="reverser" />
 
