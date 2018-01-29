@@ -84,7 +84,7 @@
                 android:id="@+id/check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Activer/Désactiver le bouton 'verser(mélange précédent)"/>
+                android:text="Désactiver le bouton 'verser(mélange précédent)'"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -211,6 +211,7 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/reverser"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="50"

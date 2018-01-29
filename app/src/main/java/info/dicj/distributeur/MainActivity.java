@@ -5,13 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import info.dicj.distributeur.Distributeur.Distributeur;
 import info.dicj.distributeur.Distributeur.Exception.AucunDistribuableException;
@@ -19,7 +21,7 @@ import info.dicj.distributeur.Distributeur.Exception.AucunMelangeException;
 import info.dicj.distributeur.Distributeur.Exception.DebordementMelangeException;
 import info.dicj.distributeur.Distributeur.Recette;
 
-public class MainActivity extends AppCompatActivity implements OnCheckedChangeListener {
+public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
     private Distributeur distributeur;
 
@@ -29,7 +31,18 @@ public class MainActivity extends AppCompatActivity implements OnCheckedChangeLi
         setContentView(R.layout.activity_main);
 
         ((RadioGroup)findViewById(R.id.group)).setOnCheckedChangeListener(this);
-        ((CheckBox)findViewById(R.id.check)).setOnCheckedChangeListener(this);
+        ((CheckBox)findViewById(R.id.check)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                compoundButton = (CheckBox) findViewById(R.id.check);
+                View button = findViewById(R.id.reverser);
+
+                if(compoundButton.isChecked())
+                    button.setVisibility(View.GONE);
+                else
+                    button.setVisibility(View.VISIBLE);
+            }
+        });
 
         distributeur = new Distributeur();
 
