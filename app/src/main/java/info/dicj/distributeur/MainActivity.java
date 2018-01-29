@@ -21,7 +21,7 @@ import info.dicj.distributeur.Distributeur.Exception.AucunMelangeException;
 import info.dicj.distributeur.Distributeur.Exception.DebordementMelangeException;
 import info.dicj.distributeur.Distributeur.Recette;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
+public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, CompoundButton.OnCheckedChangeListener {
 
     private Distributeur distributeur;
 
@@ -31,22 +31,23 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         setContentView(R.layout.activity_main);
 
         ((RadioGroup)findViewById(R.id.group)).setOnCheckedChangeListener(this);
-        ((CheckBox)findViewById(R.id.check)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                compoundButton = (CheckBox) findViewById(R.id.check);
-                View button = findViewById(R.id.reverser);
+        ((CheckBox)findViewById(R.id.check)).setOnCheckedChangeListener(this);
 
-                if(compoundButton.isChecked())
-                    button.setVisibility(View.GONE);
-                else
-                    button.setVisibility(View.VISIBLE);
-            }
-        });
 
         distributeur = new Distributeur();
 
         Log.i("DICJ", "MainActivity.oncreate");
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        compoundButton = (CheckBox) findViewById(R.id.check);
+        View button = findViewById(R.id.reverser);
+
+        if(compoundButton.isChecked())
+            button.setVisibility(View.GONE);
+        else
+            button.setVisibility(View.VISIBLE);
     }
 
     @Override
