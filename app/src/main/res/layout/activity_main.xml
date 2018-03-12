@@ -30,7 +30,7 @@
                 android:background="#000000"/>
 
             <TextView
-                android:text="Super Distributeur DICJ"
+                android:text="@string/dist_nom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Participez au sondage !"
+                android:text="@string/sondage"
                 android:textStyle="bold"/>
 
             <EditText
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
-                android:hint="Inscrire votre nom"/>
+                android:hint="@string/input_nom"/>
             
             <RadioGroup
                 android:id="@+id/group"
@@ -72,19 +72,19 @@
                     android:id="@+id/adore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="J'adore le cours"/>
+                    android:text="@string/btn_adore"/>
                 <RadioButton
                     android:id="@+id/adorepas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Je n'adore pas le cours"/>
+                    android:text="@string/btn_pasAdore"/>
             </RadioGroup>
 
             <CheckBox
                 android:id="@+id/check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Désactiver le bouton 'verser(mélange précédent)'"/>
+                android:text="@string/btn_prevMix_active"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -95,7 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:text="Les boissons"
+                        android:text="@string/boissons"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
@@ -108,7 +108,7 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pepsi"
+                        android:text="@string/pepsi_nom"
                         android:id="@+id/bPepsi"
                         android:layout_column="0"
                         android:layout_weight="50"
@@ -117,7 +117,7 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Orangeade"
+                        android:text="@string/orangeade_nom"
                         android:id="@+id/bOrangeade"
                         android:layout_column="1"
                         android:layout_weight="50"
@@ -130,7 +130,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Racinette"
+                    android:text="@string/racinette_nom"
                     android:id="@+id/bRacinette"
                     android:layout_column="0"
                     android:layout_weight="50"
@@ -139,7 +139,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fraise"
+                    android:text="@string/fraise_nom"
                     android:id="@+id/bFraise"
                     android:layout_column="1"
                     android:layout_weight="50"
@@ -152,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp">
                     <TextView
-                        android:text="Les saveurs"
+                        android:text="@string/saveurs"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/saveurs"/>
@@ -160,7 +160,7 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Épice"
+                        android:text="@string/epice_nom"
                         android:id="@+id/sEpice"
                         android:layout_below="@id/saveurs"
                         android:onClick="ajouterSaveur" />
@@ -168,7 +168,7 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bacon"
+                        android:text="@string/bacon_nom"
                         android:id="@+id/sBacon"
                         android:layout_below="@id/saveurs"
                         android:layout_toRightOf="@id/sEpice"
@@ -177,7 +177,7 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Gingembre"
+                        android:text="@string/gin_nom"
                         android:id="@+id/sGingembre"
                         android:layout_below="@id/saveurs"
                         android:layout_toRightOf="@id/sBacon"
@@ -186,7 +186,7 @@
 
             <TextView
                 android:paddingTop="@dimen/activity_vertical_margin"
-                android:text="Les opérations"
+                android:text="@string/operations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -197,14 +197,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
-                android:text="Nouveau"
+                android:text="@string/btn_nouveau"
                 android:onClick="nouveau" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
-                android:text="Verser"
+                android:text="@string/btn_verser"
                 android:onClick="verser" />
             </LinearLayout>
         </LinearLayout>
@@ -215,7 +215,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="50"
-        android:text="Verser (mélange précédent)"
+        android:text="@string/btn_verserPrec"
         android:onClick="reverser" />
 
 </LinearLayout>

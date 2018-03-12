@@ -1,8 +1,10 @@
 package info.dicj.distributeur;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,7 @@ import info.dicj.distributeur.Distributeur.Recette;
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, CompoundButton.OnCheckedChangeListener {
 
     private Distributeur distributeur;
+    private NotificationCompat.Builder not;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
 
         distributeur = new Distributeur();
+        not = new NotificationCompat.Builder(this);
+        not.setContentTitle("va chier");
+        not.setContentText("mon esti de tbk de mangeux de marde de calis");
 
         Log.i("DICJ", "MainActivity.oncreate");
     }
@@ -59,13 +65,13 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         switch(checkedId)
         {
             case R.id.adore:
-                adore.setText("Bravo " + nom.getText() + "! Merci de ton intérêt pour le cours !");
+                adore.setText(getString(R.string.adore_1) + nom.getText() + getString(R.string.adore_2));
                 adore.setTextSize(12);
                 adore.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 layout.addView(adore, layout.indexOfChild(group)+1);
                 break;
             case R.id.adorepas:
-                adore.setText("Continue tes efforts " + nom.getText() + ", tout ira bien !");
+                adore.setText(getString(R.string.adorepas_1) + nom.getText() + getString(R.string.adorepas_2));
                 adore.setTextSize(12);
                 adore.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 layout.addView(adore, layout.indexOfChild(group)+1);
@@ -95,6 +101,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     public void verser(View view) {
 
         Log.i("DICJ", "MainActivity.verser");
+
+        NotificationManager notMan = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notMan.notify(0, not.build());
 
         try {
             afficherRecette(distributeur.melangerRecette());

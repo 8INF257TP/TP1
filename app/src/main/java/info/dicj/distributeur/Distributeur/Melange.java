@@ -1,10 +1,14 @@
 package info.dicj.distributeur.Distributeur;
 
+import android.content.Context;
+import android.content.res.Resources;
+
 import java.util.ArrayList;
 
 import info.dicj.distributeur.Distributeur.Distribuable.Boisson.Boisson;
 import info.dicj.distributeur.Distributeur.Distribuable.Saveur.Saveur;
 import info.dicj.distributeur.Distributeur.Exception.DebordementMelangeException;
+import info.dicj.distributeur.R;
 
 /**
  * Created by Michael on 2018-01-17.
@@ -55,9 +59,12 @@ public class Melange implements Recette {
         }
 
         if(saveur == null)
-            return "boissons: " + nomBoissons.toString() + "\nSaveurs: Aucune";
+            return Resources.getSystem().getString(R.string.info_boisson_1) + nomBoissons.toString() +
+                    Resources.getSystem().getString(R.string.info_boisson_2) +
+                    Resources.getSystem().getString(R.string.info_boisson_2_aucune);
         else
-            return "boissons: " + nomBoissons.toString() + "\nSaveurs: " + saveur.getNom();
+            return Resources.getSystem().getString(R.string.info_boisson_1) + nomBoissons.toString() +
+                    Resources.getSystem().getString(R.string.info_boisson_2) + saveur.getNom();
     }
 
     public int getNbBoissons(){

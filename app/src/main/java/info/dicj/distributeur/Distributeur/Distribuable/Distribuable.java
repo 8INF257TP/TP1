@@ -1,5 +1,9 @@
 package info.dicj.distributeur.Distributeur.Distribuable;
 
+import android.content.res.Resources;
+
+import info.dicj.distributeur.R;
+
 /**
  * Created by Michael on 2018-01-17.
  */
@@ -42,6 +46,6 @@ public class Distribuable implements IProduit{
     }
 
     public String toString() {
-        return nom+":"+description+" qte: "+quantite;
+        return nom+":"+description+ Resources.getSystem().getString(R.string.quantite)+quantite;
     }
 }

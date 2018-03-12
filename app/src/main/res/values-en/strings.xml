@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Distributor</string>
+
+    //MainActivity
+    <string name="adore_1">Bravo </string>
+    <string name="adore_2">! Thanks for your interest in my course !</string>
+    <string name="adorepas_1">Keep up your good work </string>
+    <string name="adorepas_2">, it\'ll be all sweefty</string>
+
+    //getInformation Melange
+    <string name="info_boisson_1">beverages: </string>
+    <string name="info_boisson_2">\nflavor: </string>
+    <string name="info_boisson_2_aucune">N/A</string>
+
+    //quantite
+    <string name="quantite"> qty: </string>
+
+    /Saveurs
+    <string name="saveurs">Flavors</string>
+    //Bacon
+    <string name="bacon_nom">Bacon</string>
+    <string name="bacon_desc">Crispy Bacon flavor</string>
+    //Epice
+    <string name="epice_nom">Spices</string>
+    <string name="epice_desc">Spices from all around the world</string>
+    //Gingembre
+    <string name="gin_nom">Ginger</string>
+    <string name="gin_desc">Sweet and schwifty ginger flavor</string>
+
+    //Boissons
+    <string name="boissons">Drinks</string>
+    //Fraise
+    <string name="fraise_nom">Strawberry</string>
+    <string name="fraise_desc">Tasty strawberry drink</string>
+    //Orangeade
+    <string name="orangeade_nom">Orange</string>
+    <string name="orangeade_desc">Beverage made from real, biological oranges from the United States Of America</string>
+    //Pepsi
+    <string name="pepsi_nom">Pepsi</string>
+    <string name="pepsi_desc">When there is no Coke</string>
+    //Racinette
+    <string name="racinette_nom">Root beer</string>
+    <string name="racinette_desc">Beverage made from magic bean root, growing all the way up to the skies</string>
+
+    //Exceptions
+    <string name="ex_debordement">You spilled it everywhere</string>
+    <string name="ex_aucun_melange">Nothing to pour</string>
+    <string name="ex_aucun_distribuable">No drink available</string>
+
+    //nom Distributeur
+    <string name="dist_nom">Nice DICJ Distributor</string>
+
+    //Sondage
+    <string name="sondage">Answer to our survey !</string>
+
+    //Entrer nom
+    <string name="input_nom">Type your firstname</string>
+
+    //Boutons radio
+    <string name="btn_adore">I love this class !</string>
+    <string name="btn_pasAdore">I don\'t like this class</string>
+
+    //operations
+    <string name="operations">operations</string>
+    <string name="btn_verser">Pour</string>
+    <string name="btn_verserPrec">Pour (previous mix)</string>
+    <string name="btn_nouveau">New</string>
+
+    //desactiver melange precedent
+    <string name="btn_prevMix_active">deactivate \'pour (previous mix)\' button</string>
+</resources>

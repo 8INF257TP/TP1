@@ -1,3 +1,71 @@
 <resources>
     <string name="app_name">Distributeur</string>
+
+    //MainActivity
+    <string name="adore_1">Bravo </string>
+    <string name="adore_2">! Merci de ton intérêt pour le cours !</string>
+    <string name="adorepas_1">Continue tes efforts </string>
+    <string name="adorepas_2">, tout iras bien !</string>
+
+    //getInformation Melange
+    <string name="info_boisson_1">boissons: </string>
+    <string name="info_boisson_2">\nsaveur: </string>
+    <string name="info_boisson_2_aucune">aucune</string>
+
+    //quantite
+    <string name="quantite"> qte: </string>
+
+    /Saveurs
+    <string name="saveurs">Les saveurs</string>
+    //Bacon
+    <string name="bacon_nom">Bacon</string>
+    <string name="bacon_desc">Saveur delicieuse de Bacon</string>
+    //Epice
+    <string name="epice_nom">Epice</string>
+    <string name="epice_desc">Saveur delicieuse d\'epice</string>
+    //Gingembre
+    <string name="gin_nom">Gingembre</string>
+    <string name="gin_desc">Saveur delicieuse de gingembre</string>
+
+    //Boissons
+    <string name="boissons">Les boissons</string>
+    //Fraise
+    <string name="fraise_nom">Fraise</string>
+    <string name="fraise_desc">Saveur de fraise petillante</string>
+    //Orangeade
+    <string name="orangeade_nom">Orangeade</string>
+    <string name="orangeade_desc">Saveur petillante d\'orangeade</string>
+    //Pepsi
+    <string name="pepsi_nom">Pepsi</string>
+    <string name="pepsi_desc">Saveur petillante de pepsi</string>
+    //Racinette
+    <string name="racinette_nom">Racinette</string>
+    <string name="racinette_desc">Saveur petillante de racinette</string>
+
+    //Exception
+    <string name="ex_debordement">Le melange a deborde</string>
+    <string name="ex_aucun_melange">Pas de melange</string>
+    <string name="ex_aucun_distribuable">Pas de distribuable</string>
+
+    //nom Distributeur
+    <string name="dist_nom">Super Distributeur DICJ</string>
+
+    //Sondage
+    <string name="sondage">Participez au sondage !</string>
+
+    //Entrer nom
+    <string name="input_nom">Inscrire votre nom</string>
+
+    //Boutons radio
+    <string name="btn_adore">J\'adore le cours</string>
+    <string name="btn_pasAdore">Je n\'aime pas le cours</string>
+
+    //operations
+    <string name="operations">operations</string>
+    <string name="btn_verser">Verser</string>
+    <string name="btn_verserPrec">Verser (melange precedent)</string>
+    <string name="btn_nouveau">Nouveau</string>
+
+    //desactiver melange precedent
+    <string name="btn_prevMix_active">Désactiver le bouton \'verser(mélange précédent)\'</string>
 </resources>
