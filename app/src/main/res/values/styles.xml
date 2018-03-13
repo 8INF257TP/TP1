@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="UQAC">
+        <item name="android:textColor">#00FF00</item>
+        <item name="android:background">#E8E8E8</item>
+    </style>
+
 </resources>

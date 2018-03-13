@@ -96,6 +96,4 @@ public class Distributeur {
         melangePrecedent = melangeCourant;
         return melangeCourant;
     }
-
-   // public Melange getMelangePrecedent() {}
 }
