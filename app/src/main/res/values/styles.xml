@@ -8,9 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="UQAC">
-        <item name="android:textColor">#00FF00</item>
+    <style name="UQAC" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">#00AA00</item>
         <item name="android:background">#E8E8E8</item>
+        <item name="android:shape">oval</item>
     </style>
 
+    <style name="Forest" parent="@style/UQAC">
+        <item name="android:background">#004400</item>
+    </style>
+
+    <style name="darkRed" parent="@style/UQAC">
+        <item name="android:background">#440000</item>
+    </style>
+
+    <style name="border">
+        <item name="android:background">#009900</item>
+    </style>
 </resources>
