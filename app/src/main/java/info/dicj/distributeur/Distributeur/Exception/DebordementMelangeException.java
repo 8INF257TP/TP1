@@ -1,5 +1,6 @@
 package info.dicj.distributeur.Distributeur.Exception;
 
+import android.content.Context;
 import android.content.res.Resources;
 
 import info.dicj.distributeur.R;
@@ -9,12 +10,16 @@ import info.dicj.distributeur.R;
  */
 
 public class DebordementMelangeException extends Exception{
-    public DebordementMelangeException(){
+
+    Context context;
+
+    public DebordementMelangeException(Context _context){
         super();
+        context = _context;
     }
 
     @Override
     public String getMessage() {
-        return Resources.getSystem().getString(R.string.ex_debordement);
+        return context.getResources().getString(R.string.ex_debordement);
     }
 }

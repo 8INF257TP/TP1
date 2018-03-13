@@ -1,5 +1,6 @@
 package info.dicj.distributeur;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +27,7 @@ import info.dicj.distributeur.Distributeur.Recette;
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, CompoundButton.OnCheckedChangeListener {
 
     private Distributeur distributeur;
-    private NotificationCompat.Builder not;
+    private Notification not;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +38,13 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         ((CheckBox)findViewById(R.id.check)).setOnCheckedChangeListener(this);
 
 
-        distributeur = new Distributeur();
-        not = new NotificationCompat.Builder(this);
-        not.setContentTitle("va chier");
-        not.setContentText("mon esti de tbk de mangeux de marde de calis");
+        distributeur = new Distributeur(this);
+        not = new NotificationCompat.Builder(this)
+                .setSmallIcon(android.R.drawable.ic_menu_save)
+                .setContentTitle("test")
+                .setContentText("test description")
+                .setPriority(Notification.PRIORITY_LOW)
+                .build();
 
         Log.i("DICJ", "MainActivity.oncreate");
     }
@@ -103,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         Log.i("DICJ", "MainActivity.verser");
 
         NotificationManager notMan = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notMan.notify(0, not.build());
+        notMan.notify(0, not);
 
         try {
             afficherRecette(distributeur.melangerRecette());

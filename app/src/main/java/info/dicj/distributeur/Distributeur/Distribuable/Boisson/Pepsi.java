@@ -1,5 +1,6 @@
 package info.dicj.distributeur.Distributeur.Distribuable.Boisson;
 
+import android.content.Context;
 import android.content.res.Resources;
 
 import info.dicj.distributeur.R;
@@ -10,8 +11,8 @@ import info.dicj.distributeur.R;
 
 public class Pepsi extends Boisson {
 
-    public Pepsi() {
-        super(Resources.getSystem().getString(R.string.pepsi_nom), Resources.getSystem().getString(R.string.pepsi_desc));
+    public Pepsi(Context _context) {
+        super(_context.getResources().getString(R.string.pepsi_nom), _context.getResources().getString(R.string.pepsi_desc), _context);
     }
 
     public String toString() {

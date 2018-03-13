@@ -1,5 +1,6 @@
 package info.dicj.distributeur.Distributeur.Distribuable.Saveur;
 
+import android.content.Context;
 import android.content.res.Resources;
 
 import info.dicj.distributeur.R;
@@ -9,8 +10,8 @@ import info.dicj.distributeur.R;
  */
 
 public class Epice extends Saveur {
-    public Epice() {
-        super(Resources.getSystem().getString(R.string.epice_nom),Resources.getSystem().getString(R.string.epice_desc));
+    public Epice(Context _context) {
+        super(_context.getResources().getString(R.string.epice_nom),_context.getResources().getString(R.string.epice_desc), _context);
     }
 
     public String toString() {

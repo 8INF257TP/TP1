@@ -1,5 +1,6 @@
 package info.dicj.distributeur.Distributeur.Distribuable;
 
+import android.content.Context;
 import android.content.res.Resources;
 
 import info.dicj.distributeur.R;
@@ -13,11 +14,13 @@ public class Distribuable implements IProduit{
     private String nom;
     private String description;
     public static final int MAX_PRODUIT = 10;
+    protected Context context;
 
-    public Distribuable(int _quantite, String _nom, String _description) {
+    public Distribuable(int _quantite, String _nom, String _description, Context _context) {
         quantite = _quantite;
         nom = _nom;
         description = _description;
+        context = _context;
     }
 
     public void ajouter() {
@@ -46,6 +49,6 @@ public class Distribuable implements IProduit{
     }
 
     public String toString() {
-        return nom+":"+description+ Resources.getSystem().getString(R.string.quantite)+quantite;
+        return nom+":"+description+ context.getResources().getString(R.string.quantite)+quantite;
     }
 }
