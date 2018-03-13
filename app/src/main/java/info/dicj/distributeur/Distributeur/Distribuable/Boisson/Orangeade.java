@@ -1,5 +1,6 @@
 package info.dicj.distributeur.Distributeur.Distribuable.Boisson;
 
+import android.content.Context;
 import android.content.res.Resources;
 
 import info.dicj.distributeur.R;
@@ -9,8 +10,8 @@ import info.dicj.distributeur.R;
  */
 
 public class Orangeade extends Boisson {
-    public Orangeade() {
-        super(Resources.getSystem().getString(R.string.orangeade_nom), Resources.getSystem().getString(R.string.orangeade_desc));
+    public Orangeade(Context _context) {
+        super(_context.getResources().getString(R.string.orangeade_nom), _context.getResources().getString(R.string.orangeade_desc), _context);
     }
 
     public String toString() {

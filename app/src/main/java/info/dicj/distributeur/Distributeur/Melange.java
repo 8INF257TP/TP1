@@ -19,12 +19,15 @@ public class Melange implements Recette {
     private int qteBoisson = 0;
     private ArrayList<Boisson> boissons;
     private Saveur saveur;
+    private Context context;
 
     public Melange(){
         boissons = new ArrayList<>();
     }
 
-    public Melange (Melange _melange) {
+    public Melange (Melange _melange, Context _context) {
+        context = _context;
+
         for(Boisson boisson : _melange.boissons)
             try{
             ajouterBoisson(boisson);
@@ -40,7 +43,7 @@ public class Melange implements Recette {
             qteBoisson++;
 
             if (qteBoisson > MAX_BOISSON) {
-                throw new DebordementMelangeException();
+                throw new DebordementMelangeException(context);
             }
     }
 
@@ -48,7 +51,7 @@ public class Melange implements Recette {
         if(saveur == null)
             saveur = _saveur;
         else
-            throw new DebordementMelangeException();
+            throw new DebordementMelangeException(context);
     }
 
     public String getInformation() {
@@ -59,7 +62,7 @@ public class Melange implements Recette {
         }
 
         if(saveur == null)
-            return Resources.getSystem().getString(R.string.info_boisson_1) + nomBoissons.toString() +
+            return context.getResources().getString(R.string.info_boisson_1) + nomBoissons.toString() +
                     Resources.getSystem().getString(R.string.info_boisson_2) +
                     Resources.getSystem().getString(R.string.info_boisson_2_aucune);
         else
